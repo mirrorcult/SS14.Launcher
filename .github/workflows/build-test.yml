@@ -16,7 +16,9 @@ jobs:
         submodules: 'recursive'
     - uses: DeterminateSystems/nix-installer-action@main
     - uses: DeterminateSystems/magic-nix-cache-action@main
-    - name: Build Derivation
+    - name: Check Derivation
       run: nix flake check
-    - name: Test
+    - name: Build Derivation
+      run: nix build
+    - name: Test SS14.Launcher
       run: nix develop --command bash -c "dotnet test SS14.Launcher.Tests/SS14.Launcher.Tests.csproj -v n"
