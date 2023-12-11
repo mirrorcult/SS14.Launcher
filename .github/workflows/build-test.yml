@@ -18,7 +18,5 @@ jobs:
     - uses: DeterminateSystems/magic-nix-cache-action@main
     - name: Check Derivation
       run: nix flake check
-    - name: Build Derivation
+    - name: Build & Test Derivation
       run: nix build
-    - name: Test SS14.Launcher
-      run: nix develop --command bash -c "dotnet test SS14.Launcher.Tests/SS14.Launcher.Tests.csproj -v n"
