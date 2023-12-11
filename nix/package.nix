@@ -64,6 +64,14 @@ buildDotnetModule rec {
 
   nugetDeps = ./deps.nix;
 
+  disabledTest = [
+
+  ];
+  dotnetTestFlags = [
+    "--logger \"html\""
+  ];
+  doCheck = true;
+
   passthru = {
     inherit version;
   };

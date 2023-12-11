@@ -1,4 +1,4 @@
-name: Build & Test
+name: Check Derivation
 
 on:
   push:
@@ -16,5 +16,5 @@ jobs:
         submodules: 'recursive'
     - uses: DeterminateSystems/nix-installer-action@main
     - uses: DeterminateSystems/magic-nix-cache-action@main
-    - name: Build & Test Derivation
-      run: nix build
+    - name: Check Derivation
+      run: nix flake check
