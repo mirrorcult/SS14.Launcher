@@ -69,7 +69,7 @@ buildDotnetModule rec {
   ];
   dotnetTestFlags = [
     "--logger \"html\""
-  ]
+  ];
   doCheck = true;
 
   passthru = {
